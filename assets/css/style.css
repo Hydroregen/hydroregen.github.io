@@ -525,3 +525,9 @@ table.compare td.yes { color: var(--white); }
 .mt-8 { margin-top: 8px; } .mt-16 { margin-top: 16px; } .mt-24 { margin-top: 24px; } .mt-34 { margin-top: 34px; }
 .maxw-sm { max-width: 440px; } .maxw-md { max-width: 620px; }
 .hide-sm { display: none; } @media (min-width: 810px) { .hide-sm { display: initial; } }
+
+/* Team */
+.team-card { display: flex; align-items: center; gap: 24px; }
+.team-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; flex: none; border: 1px solid var(--hair); box-shadow: 0 0 0 4px rgba(34,181,115,.12); filter: grayscale(.15); transition: filter .3s; }
+.team-card:hover img { filter: none; }
+@media (max-width: 809.98px) { .team-card img { width: 96px; height: 96px; } }
