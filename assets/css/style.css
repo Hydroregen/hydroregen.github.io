@@ -531,3 +531,75 @@ table.compare td.yes { color: var(--white); }
 .team-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; flex: none; border: 1px solid var(--hair); box-shadow: 0 0 0 4px rgba(34,181,115,.12); filter: grayscale(.15); transition: filter .3s; }
 .team-card:hover img { filter: none; }
 @media (max-width: 809.98px) { .team-card img { width: 96px; height: 96px; } }
+
+/* ---------- CSS phone mockup (HydroBuddy screens) ---------- */
+.phone {
+  --pw: 280px;
+  position: relative; width: var(--pw); aspect-ratio: 9 / 19.5; flex: none;
+  padding: 10px; border-radius: 44px;
+  background: linear-gradient(145deg, #3a3a3c 0%, #1c1c1e 18%, #0e0e0f 50%, #232325 82%, #3a3a3c 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.14), inset 0 0 0 3px #0a0a0a, 0 30px 50px -20px rgba(0,0,0,.9);
+}
+@media (max-width: 809.98px) { .phone { --pw: 220px; } }
+.phone::before {
+  content: ""; position: absolute; inset: -30% -45%; z-index: -1; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(34,181,115,.25), transparent 72%);
+}
+.phone::after {
+  content: ""; position: absolute; left: 12%; right: 12%; bottom: -26px; height: 24px; z-index: -1;
+  background: radial-gradient(closest-side, rgba(0,0,0,.85), transparent); filter: blur(6px);
+}
+.phone-screen { position: relative; width: 100%; height: 100%; border-radius: 34px; overflow: hidden; background: #000; isolation: isolate; }
+.phone-screen img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.phone-screen .island { position: absolute; top: 9px; left: 50%; width: 32%; height: 22px; transform: translateX(-50%); border-radius: 20px; background: #000; box-shadow: 0 0 0 1px rgba(255,255,255,.04); }
+.phone-screen .glass { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(120deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.06) 28%, transparent 46%); }
+.phone-btn { position: absolute; width: 3px; border-radius: 2px; background: linear-gradient(90deg, #2c2c2e, #444); }
+.phone-btn.b1 { left: -3px; top: 18%; height: 7%; }
+.phone-btn.b2 { left: -3px; top: 28%; height: 11%; }
+.phone-btn.b3 { right: -3px; top: 24%; height: 15%; }
+
+@keyframes floaty { from { translate: 0 0; } to { translate: 0 -8px; } }
+.floaty { animation: floaty 3s ease-in-out infinite alternate; }  /* 6s full loop */
+.floaty.slow { animation-delay: -1.5s; }
+.tilt-n4 { rotate: -4deg; } .tilt-p4 { rotate: 4deg; }
+
+/* HydroBuddy hero: text left, phone pair right */
+.hb-hero { position: relative; z-index: 3; display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; padding: 90px 24px 100px; }
+.hb-hero-text { display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+.hb-hero-text .lead { max-width: 440px; }
+@media (min-width: 1000px) { .hb-hero { grid-template-columns: 1.05fr 1fr; padding: 90px 56px 110px; min-height: 86vh; } }
+.phone-pair { position: relative; justify-self: center; width: calc(280px * 1.62); height: calc(280px * 19.5 / 9 + 40px); }
+.phone-pair .pp-front, .phone-pair .pp-back { position: absolute; }
+.phone-pair .pp-front { left: 0; bottom: 0; z-index: 2; rotate: -6deg; }
+.phone-pair .pp-back { left: calc(280px * .62 + 40px - 40px); top: 0; rotate: 6deg; z-index: 1; filter: brightness(.85); }
+@media (max-width: 999.98px) {
+  .hb-hero { text-align: center; padding: 70px 16px 70px; }
+  .hb-hero-text { align-items: center; }
+  .hb-hero-text .row { justify-content: center; }
+  .phone-pair { width: auto; height: auto; display: flex; gap: 14px; justify-content: center; }
+  .phone-pair .pp-front, .phone-pair .pp-back { position: static; rotate: none; filter: none; }
+  .phone-pair .pp-front { order: 1; } .phone-pair .pp-back { order: 2; }
+  .phone-pair .phone { --pw: min(150px, 40vw); padding: 6px; border-radius: 26px; }
+  .phone-pair .phone-screen { border-radius: 20px; }
+  .phone-pair .island { top: 5px; height: 12px; }
+}
+
+/* Screen walkthrough rows */
+.walk { display: grid; grid-template-columns: 1fr; }
+.walk-phone { display: grid; place-items: center; padding: 60px 24px 70px; overflow: hidden; }
+.walk-text { justify-content: center; }
+@media (min-width: 810px) {
+  .walk { grid-template-columns: 1fr 1fr; }
+  .walk.r .walk-phone { order: 2; }
+}
+.metric { font-size: 2.2rem; font-weight: 600; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; margin-top: 6px; }
+.metric small { font-size: .45em; color: var(--accent-2); margin-left: 4px; letter-spacing: 0; }
+
+/* Home teaser */
+.teaser { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr; align-items: center; gap: 30px; padding: 64px 24px 80px; }
+.teaser-glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(60% 80% at 75% 55%, rgba(34,181,115,.22), rgba(11,77,50,.18) 45%, transparent 75%); }
+.teaser-text { position: relative; z-index: 3; }
+.teaser-text .lead { max-width: 420px; }
+.teaser-phone { position: relative; z-index: 3; display: grid; place-items: center; }
+@media (min-width: 810px) { .teaser { grid-template-columns: 1.1fr 1fr; padding: 70px 56px; } }
+@media (max-width: 809.98px) { .teaser { text-align: center; } .teaser-text { align-items: center; } .teaser-text .row { justify-content: center; } }
