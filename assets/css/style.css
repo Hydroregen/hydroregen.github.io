@@ -129,8 +129,9 @@ button { font: inherit; color: inherit; }
   padding: 0 var(--gutter);
 }
 .nav-inner { max-width: var(--maxw); margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.logo-chip { display: inline-flex; align-items: center; background: #fff; border-radius: 8px; padding: 4px 10px; height: 38px; flex: none; }
-.logo-chip img { height: 28px; width: auto; }
+.logo-chip { display: inline-flex; align-items: center; height: 38px; flex: none; }
+.logo-chip img { height: 26px; width: auto; }
+@media (min-width: 810px) { .logo-chip img { height: 30px; } }
 .nav-links { display: none; list-style: none; margin: 0; padding: 0; align-items: center; }
 .nav-links a { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; font-size: 12px; font-weight: 500; color: var(--muted); transition: color .2s, transform .2s; }
 .nav-links a:hover { color: var(--white); transform: translateY(-2px); }
