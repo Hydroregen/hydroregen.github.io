@@ -141,8 +141,8 @@
         var wave = 0.5 + 0.5 * Math.sin(t * 0.8 + i * 0.35);
         var g = ctx.createLinearGradient(cx, cy, x2, y2);
         var base = 0.05 + 0.05 * wave;
-        g.addColorStop(0, "rgba(0,230,168," + (0.08 + centre * 0.55 * (0.6 + 0.4 * wave)) + ")");
-        g.addColorStop(0.18, "rgba(34,181,115," + (centre * 0.12) + ")");
+        g.addColorStop(0, "rgba(53, 177, 255," + (0.08 + centre * 0.55 * (0.6 + 0.4 * wave)) + ")");
+        g.addColorStop(0.18, "rgba(0, 153, 255," + (centre * 0.12) + ")");
         g.addColorStop(0.45, "rgba(255,255,255," + base * 0.6 + ")");
         g.addColorStop(1, "rgba(255,255,255," + base * 1.2 + ")");
         ctx.strokeStyle = g;
@@ -154,8 +154,8 @@
       }
       // bottom glow
       var rg = ctx.createRadialGradient(cx, h, 0, cx, h, Math.min(w, 900) * 0.45);
-      rg.addColorStop(0, "rgba(0,230,168,0.35)");
-      rg.addColorStop(0.4, "rgba(11,77,50,0.25)");
+      rg.addColorStop(0, "rgba(53, 177, 255,0.35)");
+      rg.addColorStop(0.4, "rgba(11, 42, 92,0.25)");
       rg.addColorStop(1, "rgba(0,0,0,0)");
       ctx.fillStyle = rg;
       ctx.fillRect(0, 0, w, h);
